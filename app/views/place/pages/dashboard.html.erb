@@ -11,15 +11,15 @@
       <p><%= current_place.description  %></p>
       <div class="dashboard_place_btn_top">
         <div>
-        <button class = "top_buttons_dashboard_place"><%= link_to 'view our profile', place_path(current_place) %></button>
+        <button class = "purple_pink_btn mb-2"><%= link_to 'view our profile', place_path(current_place) %></button>
         </div>
         <div>
-        <button class = "top_buttons_dashboard_place"><%= link_to 'edit our profile', edit_place_path(current_place) %></button>
+        <button class = "purple_pink_btn"><%= link_to 'edit our profile', edit_place_path(current_place) %></button>
         </div>
       </div>
     </div>
     <div class = "dashboard_place_find_place">
-      <button class = "top_buttons_dashboard_place"><%= link_to 'Find a talent!', talents_path %></button>
+      <button class = "purple_pink_btn"><%= link_to 'Find a talent!', talents_path %></button>
     </div>
   </div>
 
@@ -55,7 +55,7 @@
               <tr>
                 <td><p><%= promotion.talent.name %></p></td>
                 <td><p><%= promotion.message %></p></td>
-                <td><%= link_to 'view profile', talent_path(promotion.talent), class: "promotion_buttons_dashboard_place" %></td>
+                <td><%= link_to 'view profile', talent_path(promotion.talent), class: "purple_pink_btn" %></td>
               </tr>
             </div>
             <% end %>

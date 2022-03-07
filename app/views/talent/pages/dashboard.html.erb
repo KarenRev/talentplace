@@ -10,15 +10,15 @@
       <p><%= current_talent.description  %></p>
       <div class="dashboard_talent_btn_top">
         <div>
-        <button class = "top_buttons_dashboard_Talent"><%= link_to 'view my profile', talent_path(current_talent) %></button>
+        <button class = "purple_pink_btn mb-2"><%= link_to 'view my profile', talent_path(current_talent) %></button>
         </div>
         <div>
-        <button class = "top_buttons_dashboard_Talent"><%= link_to 'edit my profile', edit_talent_path(current_talent) %></button>
+        <button class = "purple_pink_btn"><%= link_to 'edit my profile', edit_talent_path(current_talent) %></button>
         </div>
       </div>
     </div>
     <div class = "dashboard_talent_find_place">
-      <button class = "top_buttons_dashboard_Talent"><%= link_to 'Find a place to play!', places_path %></button>
+      <button class = "purple_pink_btn"><%= link_to 'Find a place to play!', places_path %></button>
     </div>
   </div>
 
@@ -36,8 +36,8 @@
               <td><p><%= booking.date %></p></td>
               <td><p><%= booking.message %></p></td>
               <% if booking.status == 'pending' %>
-                <td><button class = "booking_buttons_dashboard_Talent">confirm</button></td>
-                <td><button class = "booking_buttons_dashboard_Talent">decline</button></td>
+                <td><button class = "purple_pink_btn">confirm</button></td>
+                <td><button class = "purple_pink_btn">decline</button></td>
               <% else  %>
                 <td><p><%= booking.status %></p></td>
               <% end %>
