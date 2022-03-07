@@ -36,8 +36,8 @@
               <td><p><%= booking.date %></p></td>
               <td><p><%= booking.message %></p></td>
               <% if booking.status == 'pending' %>
-                <td><button class = "purple_pink_btn">confirm</button></td>
-                <td><button class = "purple_pink_btn">decline</button></td>
+                <td><%= link_to "confirm", booking_path(booking, status: 'confirmed'), method: :patch, class: "purple_pink_btn", data: { confirm: "Are you sure you want to confirm this promotion?" } %></td>
+                <td><%= link_to "decline", booking_path(booking, status: 'declined'), method: :patch, class: "purple_pink_btn", data: { confirm: "Are you sure you want to decline this promotion?" } %></td>
               <% else  %>
                 <td><p><%= booking.status %></p></td>
               <% end %>

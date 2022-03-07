@@ -19,11 +19,11 @@ class BookingsController < ApplicationController
     end
   end
 
-  # def update
-  #   @booking.status = params[:status]
-  #   @booking.save
-  #   redirect_to talent_dashboard_path
-  # end
+  def update
+    @booking.status = params[:status]
+    @booking.save
+    redirect_to talent_dashboard_path
+  end
 
   def destroy
     @booking.destroy

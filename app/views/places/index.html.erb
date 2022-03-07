@@ -2,6 +2,16 @@
   <div class="flex-space-between container mt-5 mb-5">
   <h1>All the places</h1>
   </div>
+
+  <%= form_tag places_path, method: :get do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a place"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="container mb-5 p-3 rounded">
     <div class="row my-2">
       <% @places.each do |place| %>

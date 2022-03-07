@@ -2,7 +2,12 @@ class PlacesController < ApplicationController
   before_action :set_place, only: %i[show edit update]
 
   def index
-    @places = Place.all
+    if params[:query].present?
+      sql_query = "title ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
+      @places = Place.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
+    else
+      @places = Place.all
+    end
   end
 
   def show

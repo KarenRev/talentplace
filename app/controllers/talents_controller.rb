@@ -2,7 +2,12 @@ class TalentsController < ApplicationController
   before_action :set_talent, only: %i[show edit update]
 
   def index
-    @talents = Talent.all
+    if params[:query].present?
+      sql_query = "talents.name ILIKE :query OR address ILIKE :query OR genres.name ILIKE :query"
+      @talents = Talent.joins(:genres).where(sql_query, query: "%#{params[:query]}%").distinct
+    else
+      @talents = Talent.all
+    end
   end
 
   def show
