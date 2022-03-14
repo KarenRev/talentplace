@@ -2,6 +2,7 @@
   <div class="container_talent_profil mt-5"  >
     <div class="grid_talent_profile">
       <div>
+
         <% if @talent.photo.key %>
           <p><%= cl_image_tag @talent.photo.key, class: " shadow talent_profile_pic mt-3" %></p>
         <% end %>
@@ -15,10 +16,10 @@
         <p>$<%= @talent.price %> per hour</p>
         <p class = "talent_description_profil"><%= @talent.description %></p>
         <div class = "mt-1 talent_social_network">
-          <%= link_to @talent.instagram_link, target: "_blank" do  %>
+          <%= link_to @talent.instagram_link do  %>
           <i class="fab fa-instagram text-link"></i>
           <% end %>
-          <%= link_to @talent.spotify_link, target: "_blank" do  %>
+          <%= link_to @talent.spotify_link do  %>
           <i class="fab fa-spotify text-link"></i>
           <% end %>
         </div>
@@ -29,6 +30,7 @@
           </div>
         <% end %>
       </div>
+    <% @talent.youtube_link = 'https://youtu.be/u2HxmwMubK0' unless @talent.youtube_link%>
     <% regexp = (@talent.youtube_link.include? "youtu.be") ? 'https:\/\/youtu.be\/(.+)' : 'https:\/\/www\.youtube\.com\/watch\?v=(.+)&ab_channel=.+' %>
     <% youtube_link = "https://www.youtube.com/embed/#{@talent.youtube_link.gsub(/#{regexp}/, '\1')}" %>
     <% instagram_link = "#{@talent.instagram_link}" %>
@@ -41,9 +43,9 @@
     </div>
   </div>
   <div class="flex-space-between mt-5 mb-5">
-    <%= link_to talents_path do %>
-      <button class="bad_btn"><i class="fa fa-arrow-left" aria-hidden="true"></i> All Talents</button>
-    <% end %>
+    <div>
+      <%= link_to 'Back to the list', talents_path, class: "bad_btn" %>
+    </div>
   </div>
 </div>
 </div>
