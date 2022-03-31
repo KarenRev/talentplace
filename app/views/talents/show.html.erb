@@ -2,6 +2,10 @@
   <div class="container_talent_profil mt-5"  >
     <div class="grid_talent_profile">
       <div>
+
+
+
+
         <% if @talent.photo.key %>
           <p><%= cl_image_tag @talent.photo.key, class: " shadow talent_profile_pic mt-3" %></p>
         <% end %>
