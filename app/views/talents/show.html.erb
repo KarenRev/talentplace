@@ -6,8 +6,6 @@
           <p><%= cl_image_tag @talent.photo.key, class: " shadow talent_profile_pic mt-3" %></p>
         <% end %>
       </div>
-
-
       <div class = "profile_talent_info">
         <h3 class = "h3_profile_talent"><%= @talent.name %></h3>
         <% @talent.genres.each do |genre| %>
