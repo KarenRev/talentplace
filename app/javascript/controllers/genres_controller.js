@@ -9,7 +9,7 @@ export default class extends Controller {
   change(event){
     console.log(event);
     const selected = [];
-    this.genreTargets.forEach((target) => {
+    this.genreTargets.forEach((ta rget) => {
       if (target.checked) {
         selected.push(target.value);
       }
