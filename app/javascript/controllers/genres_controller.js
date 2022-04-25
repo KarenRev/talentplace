@@ -6,10 +6,13 @@ export default class extends Controller {
     console.log('connected');
     console.log(this.genreTargets);
   }
+
+
+
   change(event){
     console.log(event);
     const selected = [];
-    this.genreTargets.forEach((ta rget) => {
+    this.genreTargets.forEach((target) => {
       if (target.checked) {
         selected.push(target.value);
       }
