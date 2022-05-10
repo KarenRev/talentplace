@@ -6,6 +6,7 @@ export default class extends Controller {
     console.log('connected');
     console.log(this.genreTargets);
   }
+
   change(event){
     console.log(event);
     const selected = [];
