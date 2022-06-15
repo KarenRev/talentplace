@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ['genre', 'ids'];
   connect(){
 
+
     console.log('connected');
     console.log(this.genreTargets);
   }
