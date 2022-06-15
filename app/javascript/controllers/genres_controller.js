@@ -8,7 +8,6 @@ export default class extends Controller {
 
 
 
-
     console.log('connected');
     console.log(this.genreTargets);
   }
